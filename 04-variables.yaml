@@ -1,9 +1,9 @@
 - name: print with variables
   hosts: web
   vars:
-    course="Devops"
-    duration="120HRS"
-    student="sai"
+    course: "Devops"
+    duration: "120HRS"
+    student: "sai"
   tasks:
   - name: print messege
     ansible.builtin.debug:
