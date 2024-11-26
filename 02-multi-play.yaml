@@ -3,3 +3,6 @@
   tasks:
   - name: play-01 task 01
     ansible.builtin.debug:
+  - name: play-01 task 02
+    ansible.builtin.debug:
+      msg: Hello Sai
