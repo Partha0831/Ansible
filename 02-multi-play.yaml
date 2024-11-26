@@ -5,4 +5,13 @@
     ansible.builtin.debug:
   - name: play-01 task 02
     ansible.builtin.debug:
-      msg: Hello Sai
+      msg: "Hello Sai"
+- name: Play-02
+  hosts: web
+  tasks:
+  - name: play-02 task 01
+    ansible.builtin.debug:
+      msg: "Hello Sai! How are You"
+  - name: play-02 task 02
+    ansible.builtin.debug:
+      msg: "I am a Devops Engineer"      
