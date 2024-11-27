@@ -5,4 +5,4 @@
   tasks:
     - name: "File level Variables"
       ansible.builtin.debug:
-        msg: "I am learning {{Course}} Duration is {{Duration}} and the trainer is : {{Trainer}}"
+        msg: "I am learning {{COURSE}} Duration is {{DURATION}} and the trainer is : {{TRAINER}}"
