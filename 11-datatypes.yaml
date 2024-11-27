@@ -17,4 +17,4 @@
   tasks:
     - name: "datatypes in ansible"
       anisble.builtin.debug:
-        msg: "i am learning {{COURSE}} duation: {{DURATION}} totics are: {{TOPICS}},{{live}},{{tools}}{{ci}},{{cm}},{{cloud}}"       
+        msg: "i am learning {{COURSE}} duation: {{DURATION}} totics are: {{TOPICS}},{{live}},{{tools}}"       
