@@ -1,0 +1,13 @@
+- name: "prompt level variables"
+  hosts: "web"
+  vars_prompt:
+    COURSE:
+      prompt: "Please enter course name"
+    DURATION:
+      prompt: "Please enter duration"
+    TRAINER:
+      prompt: "Please enter TRAINER name"
+  tasks:
+    - name: "Prompt level variable"
+      ansible.builtin.debug:
+        msg: "I am learning {{COURSE}} Duration is {{DURATION}} and the trainer is : {{TRAINER}}"       
