@@ -1,0 +1,6 @@
+- name: "prompt level variables"
+  hosts: "web"
+  tasks:
+    - name: "Prompt level variable"
+      ansible.builtin.debug:
+        msg: "Hi {{NAME}} A very {{GRET}}"    
