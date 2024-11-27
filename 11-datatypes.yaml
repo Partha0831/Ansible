@@ -1,5 +1,6 @@
 - name: "datatypes in ansible"
   hosts: local
+  connection: local # when you are inside the server username,password doesn't required
   vars:
     COURSE: "Devops" #string
     DURATION: 120 #Number
