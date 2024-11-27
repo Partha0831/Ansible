@@ -15,6 +15,6 @@
       cm: ansible
       cloud: aws
   tasks:
-    - name: "datatypes in ansible"
-      anisble.builtin.debug:
-        msg: "i am learning {{COURSE}} duation: {{DURATION}} totics are: {{TOPICS}},{{live}},{{tools}}"       
+  - name: "datatypes in ansible"
+    anisble.builtin.debug:
+      msg: "i am learning {{COURSE}} duation: {{DURATION}} totics are: {{TOPICS}},{{live}},{{tools}}"       
