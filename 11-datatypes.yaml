@@ -1,0 +1,19 @@
+- name: "datatypes in ansible"
+  hosts: local
+  vars:
+    COURSE: "Devops" #string
+    DURATION: 120 #Number
+    TOPICS: #list
+      - Linux
+      - Shell
+      - ansible
+      - terraform
+    live: true #boolean
+    tools: #map/dictionary
+      ci: jenkins
+      cm: ansible
+      cloud: aws
+  tasks:
+    - name: "datatypes in ansible"
+      anisble.builtin.debug:
+        msg: "i am learning {{COURSE}} duation: {{DURATION}} totics are: {{TOPICS}},{{live}},{{tools}}{{ci}},{{cm}},{{cloud}}"       
