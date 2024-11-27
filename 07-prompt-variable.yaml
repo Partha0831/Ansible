@@ -3,7 +3,7 @@
   vars_prompt:
     - name: "COURSE"
       prompt: "Please enter course name"
-      private: false
+      private: false # this is used to display the input over the terminal
     - name: "DURATION"
       prompt: "Please enter duration"
     - name: "TRAINER"
