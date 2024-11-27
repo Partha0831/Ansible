@@ -1,5 +1,6 @@
 - name: conditions
-  hosts: localhost
+  hosts: local
+  connection: local
   vars_prompt:
     - name: my_number
       prompt: "please enter a number"
