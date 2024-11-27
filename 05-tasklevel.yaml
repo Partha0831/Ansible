@@ -8,13 +8,11 @@
     - name: "Play level variables"
       ansible.builtin.debug:
         msg: "I am learning {{Cource}} Duration is {{Duration}} and the trainer is : {{Trainer}}"
-  tasks:
     - name: "Play level variables"
       vars:
         Duration: "140HRS"
       ansible.builtin.debug:
        msg: "I am learning {{Cource}} Duration is {{Duration}} and the trainer is : {{Trainer}}"
-  tasks:
     - name: "Play level variables"
       ansible.builtin.debug:
         msg: "I am learning {{Cource}} Duration is {{Duration}} and the trainer is : {{Trainer}}"     
