@@ -1,11 +1,12 @@
 - name: "prompt level variables"
   hosts: "web"
   vars_prompt:
-    COURSE:
+    - name: "COURSE"
       prompt: "Please enter course name"
-    DURATION:
+      private: false
+    - name: "DURATION"
       prompt: "Please enter duration"
-    TRAINER:
+    - name: "TRAINER"
       prompt: "Please enter TRAINER name"
   tasks:
     - name: "Prompt level variable"
