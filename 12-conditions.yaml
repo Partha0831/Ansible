@@ -7,5 +7,5 @@
   tasks:
     - name: printa number if it is less than 10
       ansible.builtin.debug:
-        msg "given number: {{ my_number }} is less then 10"
-      when: my_number  < 10 # conditional expression      
+        msg: "given number: {{ my_number }} is less then 10"
+      when: my_number | int  < 10 # conditional expression      
