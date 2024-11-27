@@ -1,20 +1,28 @@
 - name: "datatypes in ansible"
   hosts: local
-  connection: local # when you are inside the server username,password doesn't required
+  connection: local  # No need for username and password when running locally
   vars:
-    COURSE: "Devops" #string
-    DURATION: 120 #Number
-    TOPICS: #list
+    COURSE: "Devops"  # string
+    DURATION: 120  # Number
+    TOPICS:  # list
       - Linux
       - Shell
-      - ansible
-      - terraform
-    live: true #boolean
-    tools: #map/dictionary
+      - Ansible
+      - Terraform
+    live: true  # boolean
+    tools:  # map/dictionary
       ci: jenkins
       cm: ansible
       cloud: aws
   tasks:
-  - name: "datatypes in ansible"
-    anisble.builtin.debug:
-      msg: "hi"       
+    - name: "Show datatypes in ansible"
+      ansible.builtin.debug:
+        msg: |
+          I am learning {{ COURSE }}.
+          Duration: {{ DURATION }} hours.
+          Topics are: {{ TOPICS | join(', ') }}.
+          Live session: {{ live }}.
+          Tools: 
+            CI: {{ tools.ci }}
+            CM: {{ tools.cm }}
+            Cloud: {{ tools.cloud }}
