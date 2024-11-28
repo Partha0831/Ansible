@@ -7,7 +7,7 @@
         name: "Hi {{item}} "
         state: present
       loop:
-        - nginx  
-        - git
-        - docker.io
-        - postfix
+      - nginx
+      - git
+      - docker.io
+      - postfix
