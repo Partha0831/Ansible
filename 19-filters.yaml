@@ -20,3 +20,8 @@
       Numbers: [1,2,3,4,3,2,1,5]
     ansible.builtin.debug:
       msg: " {{Numbers | unique}} "  
+  - name: filter unique numbers
+    vars:
+      Numbers: [1,2,3,4,3,2,1,5]
+    ansible.builtin.debug:
+      msg: " min: {{Numbers | min}},max: {{Numbers | max}}  "       
