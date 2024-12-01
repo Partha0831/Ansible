@@ -43,6 +43,6 @@
       msg: "items are {{ course | items2dict }}"     
   - name: check my ip
     vars:
-      My_IP: "192.180.1.1"
+      My_IP: "355.180.1.1"
     ansible.builtin.debug:
       msg: "validating IP {{ My_IP | ansible.utils.ipv4 }}"       
