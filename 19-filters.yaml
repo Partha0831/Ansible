@@ -4,4 +4,4 @@
   tasks:
   - name: function/filters on ansible
     anisble.builtin.debug:
-      msg: " {{ course | default('ansible')}} "
+      msg: "Hello {{ course | default('ansible') }} "
