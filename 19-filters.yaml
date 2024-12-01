@@ -5,3 +5,8 @@
   - name: function/filters on ansible
     ansible.builtin.debug:
       msg: "Hello {{ course | default('ansible') }} "
+  - name: convert to upper
+    vars:
+      greeting: "Good Morning"
+    ansible.builtin.debug:
+      msg: " {{greeting | upper}} "      
