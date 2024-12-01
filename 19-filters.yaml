@@ -9,4 +9,9 @@
     vars:
       greeting: "Good Morning"
     ansible.builtin.debug:
-      msg: " {{greeting | upper}} "      
+      msg: " {{greeting | upper}} "     
+  - name: convert to upper
+    vars:
+      greeting: "Good Morning"
+    ansible.builtin.debug:
+      msg: " {{greeting | lower}} "       
