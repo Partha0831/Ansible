@@ -20,8 +20,16 @@
       Numbers: [1,2,3,4,3,2,1,5]
     ansible.builtin.debug:
       msg: " {{Numbers | unique}} "  
-  - name: filter unique numbers
+  - name: filter mix and max
     vars:
       Numbers: [1,2,3,4,3,2,1,5]
     ansible.builtin.debug:
-      msg: " min: {{Numbers | min}},max: {{Numbers | max}}  "       
+      msg: " min: {{Numbers | min}},max: {{Numbers | max}}  "  
+  - name: dict to items
+    vars:
+      course:
+        name: "Devops with AWS"
+        Duration: 120
+        trainer: "Siva Kumar Reddy"
+    ansible.builtin.debug:
+      msg: "items are {{ course | dict2items }}"    
