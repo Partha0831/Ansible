@@ -2,6 +2,6 @@
   hosts: local
   connection: local
   tasks:
-  - name : function/filters on ansible
+  - name: function/filters on ansible
     anisble.builtin.debug:
       msg: " {{ course | default('ansible')}} "
