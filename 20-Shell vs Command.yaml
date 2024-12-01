@@ -4,9 +4,9 @@
   tasks:
     - name: command vs shell
       ansible.builtin.shell: ls -ltr > /tmp/output.txt 
-  - name: shell vs command
-    ansible.builtin.shell: ps -ef | grep ssh
-    register: OUTPUT  
-  - name: shell vs command
-    ansible.builtin.shell: ps -ef | grep ssh
-    register: OUTPUT     
+    - name: shell vs command
+      ansible.builtin.shell: ps -ef | grep ssh
+      register: OUTPUT  
+    - name: shell vs command
+      ansible.builtin.shell: ps -ef | grep ssh
+      register: OUTPUT     
