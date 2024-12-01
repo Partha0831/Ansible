@@ -3,5 +3,5 @@
   connection: local
   tasks:
   - name: function/filters on ansible
-    anisble.builtin.debug:
+    ansible.builtin.debug:
       msg: "Hello {{ course | default('ansible') }} "
