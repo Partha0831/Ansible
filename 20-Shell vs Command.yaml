@@ -8,5 +8,5 @@
       ansible.builtin.shell: ps -ef | grep ssh
       register: OUTPUT  
     - name: shell vs command
-      ansible.builtin.shell: ps -ef | grep ssh
+      ansible.builtin.command: ps -ef | grep ssh
       register: OUTPUT     
