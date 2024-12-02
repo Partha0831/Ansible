@@ -1,0 +1,53 @@
+- name: create ec2 and r53
+  hosts: local
+  connection: local
+  vars:
+    subnet_id: "subnet-0e4484507d91658f3"
+    security_group: "sg-08f194a41e22e908b"
+    img_id: "ami-09c813fb71547fc4f"
+    instances:
+    - mysql
+    - backend
+    - frontend
+    zone: "devopspractice.in"
+  tasks:
+  - name: install dependencies of python
+    ansible.builtin.pip:
+      - boto3
+      - botocore
+      executable: pip3.9
+  - name: create EC2 Instance
+    amazon.aws.ec2_instance
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: "t3.micro"
+      security_group: "{{ security_group }}"
+      image_id: "{{ img_id }}"
+    loop: "{{ instances }}" 
+    register : ec2_instance
+
+  - name: print ec2 info
+    ansible.builtin.debug:
+      msg: "{{ ec2_instance }}"
+
+  - name: route53 creation
+    amazon.aws.route53
+      state: present
+      zone:  "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instance.results }}"
+  - name: route53 creation
+    amazon.aws.route53
+      state: present
+      zone:  "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instance.results }}"
+    when: item.item == "frontend"
